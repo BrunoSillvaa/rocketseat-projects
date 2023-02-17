@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+@mixin fontStyle() {
+
+    p {
+        color: rgba(0, 0, 0, 0.64);
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+
+    strong {
+        color: rgba(0, 0, 0, 0.88);
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+}
+
+@mixin identPredef($direction) {
+    width: 100%;
+    display: flex;
+    flex-direction: $direction;
+    justify-content: space-between;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(167.96deg, #8257E5 0%, #271A45 100%) no-repeat fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.boarding-pass {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: -0.02em;
+    gap: 2rem;
+
+    .title {
+        color: White;
+        font-weight: 500;
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .ticket {
+        background: White;
+        border-radius: 2rem;
+        width: 32.7rem;
+        @include fontStyle();
+        
+        .flight-info {
+            display: flex;
+            flex-direction: column;
+            padding: 2.4rem 3.2rem;
+            gap: 2.4rem;
+            
+            .flight {
+                @include identPredef(row);
+
+                .date {
+                    text-align: end;
+                }
+            }
+
+            .city {
+                @include identPredef(row);
+
+                .departure {
+                    width: 12.5rem;
+                    display: flex;
+                    flex-direction: column;
+
+                    strong {
+                        font-size: 4rem;
+                    }
+                }
+
+                .arrive {
+                    width: 12.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: end;
+
+                    strong {
+                        font-size: 4rem;
+                    }
+
+                    sup {
+                        font-size: 1rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        .passenger-info {
+            display: flex;
+            justify-content: space-between;
+            padding: 24px 32px;
+            border-top: 1px dashed rgba(0, 0, 0, 0.32);
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.32);
+
+            .seat {
+                text-align: end;
+            }
+
+            &::before {
+                content: '';
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 50%;
+                position: absolute;
+                z-index: 1;
+            }
+        }
+
+        .boarding-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.4rem 3.2rem;
+            gap: 2.4rem;
+
+           .container {
+            @include identPredef(row);
+
+            .boarding {
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+
+                .time {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.2rem;
+
+                    strong {
+                        color: White;
+                        background: #633BBC;
+                        padding: 0.4rem 0.8rem;
+                        border-radius: 0.8rem;
+                    }
+                }
+            }
+
+            .qr-code {
+                img {
+                    width: 14rem;
+                    margin-bottom: 1rem;
+                }
+            }
+           }
+
+        //    &:hover {
+        //     margin-top: 1rem;
+        //    }
+        }
+    }
+
+    .text {
+        color: rgba(255, 255, 255, 0.64);
+        width: 27rem;
+        text-align: center;
+        line-height: 2.4rem;
+        font-size: 1.4rem;
+        margin: 0 auto;
+    }
+}

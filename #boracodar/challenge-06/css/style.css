@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(167.96deg, #8257E5 0%, #271A45 100%) no-repeat fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boarding-pass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  gap: 2rem;
+}
+.boarding-pass .title {
+  color: White;
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+}
+.boarding-pass .ticket {
+  background: White;
+  border-radius: 2rem;
+  width: 32.7rem;
+}
+.boarding-pass .ticket p {
+  color: rgba(0, 0, 0, 0.64);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.boarding-pass .ticket strong {
+  color: rgba(0, 0, 0, 0.88);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.boarding-pass .ticket .flight-info {
+  display: flex;
+  flex-direction: column;
+  padding: 2.4rem 3.2rem;
+  gap: 2.4rem;
+}
+.boarding-pass .ticket .flight-info .flight {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.boarding-pass .ticket .flight-info .flight .date {
+  text-align: end;
+}
+.boarding-pass .ticket .flight-info .city {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.boarding-pass .ticket .flight-info .city .departure {
+  width: 12.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.boarding-pass .ticket .flight-info .city .departure strong {
+  font-size: 4rem;
+}
+.boarding-pass .ticket .flight-info .city .arrive {
+  width: 12.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+}
+.boarding-pass .ticket .flight-info .city .arrive strong {
+  font-size: 4rem;
+}
+.boarding-pass .ticket .flight-info .city .arrive sup {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.boarding-pass .ticket .passenger-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 32px;
+  border-top: 1px dashed rgba(0, 0, 0, 0.32);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.32);
+}
+.boarding-pass .ticket .passenger-info .seat {
+  text-align: end;
+}
+.boarding-pass .ticket .passenger-info::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+.boarding-pass .ticket .boarding-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.4rem 3.2rem;
+  gap: 2.4rem;
+}
+.boarding-pass .ticket .boarding-info .container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.boarding-pass .ticket .boarding-info .container .boarding {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.boarding-pass .ticket .boarding-info .container .boarding .time {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.boarding-pass .ticket .boarding-info .container .boarding .time strong {
+  color: White;
+  background: #633BBC;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.8rem;
+}
+.boarding-pass .ticket .boarding-info .container .qr-code img {
+  width: 14rem;
+  margin-bottom: 1rem;
+}
+.boarding-pass .text {
+  color: rgba(255, 255, 255, 0.64);
+  width: 27rem;
+  text-align: center;
+  line-height: 2.4rem;
+  font-size: 1.4rem;
+  margin: 0 auto;
+}/*# sourceMappingURL=style.css.map */
