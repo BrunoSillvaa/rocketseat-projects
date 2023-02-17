@@ -23,6 +23,17 @@
     justify-content: space-between;
 }
 
+@mixin ticketHoles() {
+    .ball {
+        background: #633BBC;
+        position: absolute;
+        border-radius: 50%;
+        width: 2.8rem;
+        height: 2.8rem;
+        z-index: 1;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -37,7 +48,7 @@
 
 body {
     height: 100vh;
-    background: linear-gradient(167.96deg, #8257E5 0%, #271A45 100%) no-repeat fixed;
+    background: #633BBC;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,14 +72,16 @@ body {
     }
     
     .ticket {
-        background: White;
-        border-radius: 2rem;
         width: 32.7rem;
         @include fontStyle();
-        
+        @include ticketHoles();
+
         .flight-info {
+            background: White;
             display: flex;
             flex-direction: column;
+            border-top-right-radius: 2rem;
+            border-top-left-radius: 2rem;
             padding: 2.4rem 3.2rem;
             gap: 2.4rem;
             
@@ -78,6 +91,10 @@ body {
                 .date {
                     text-align: end;
                 }
+            }
+
+            .airplane {
+                animation: flyAnimation 1.5s linear infinite;
             }
 
             .city {
@@ -109,49 +126,87 @@ body {
                     }
                 }
             }
+
+            &:hover {
+                background: rgb(245, 245, 245);
+                border-top-right-radius: 2rem;
+                border-top-left-radius: 2rem;
+                cursor: pointer;
+            }
+
+            &:active {
+                animation: detachTicket 0.2s normal forwards;
+            }
         }
 
         .passenger-info {
+            background: White;
             display: flex;
             justify-content: space-between;
             padding: 24px 32px;
             border-top: 1px dashed rgba(0, 0, 0, 0.32);
             border-bottom: 1px dashed rgba(0, 0, 0, 0.32);
+            position: relative;
 
             .seat {
                 text-align: end;
             }
+            
+            .ball {
+                &.lt {
+                    left: -1.4rem;
+                    top: -1.4rem;
+                }
+    
+                &.lb {
+                    left: -1.4rem;
+                    bottom: -1.4rem;
+                }
+    
+                &.rt {
+                    right: -1.4rem;
+                    top: -1.4rem;
+                }
+    
+                &.rb {
+                    right: -1.4rem;
+                    bottom: -1.4rem;
+                }
+            }
+            
+            &:hover {
+                background: rgb(245, 245, 245);
+                cursor: pointer;
+            }
 
-            &::before {
-                content: '';
-                width: 1.5rem;
-                height: 1.5rem;
-                border-radius: 50%;
-                position: absolute;
-                z-index: 1;
+            &:active {
+                animation: detachTicket 0.2s normal forwards;
             }
         }
-
+        
         .boarding-info {
+            background: White;
             display: flex;
             flex-direction: column;
             align-items: center;
+            border-bottom-right-radius: 2rem;
+            border-bottom-left-radius: 2rem;
             padding: 2.4rem 3.2rem;
             gap: 2.4rem;
-
-           .container {
-            @include identPredef(row);
-
-            .boarding {
-                display: flex;
-                flex-direction: column;
-                gap: 1.6rem;
-
-                .time {
+            
+            .container {
+                @include identPredef(row);
+                
+                .boarding {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.6rem;
+                    
+                    .time {
                     display: flex;
                     flex-direction: column;
                     gap: 0.2rem;
-
+                    
                     strong {
                         color: White;
                         background: #633BBC;
@@ -160,20 +215,51 @@ body {
                     }
                 }
             }
-
+            
             .qr-code {
                 img {
                     width: 14rem;
                     margin-bottom: 1rem;
                 }
             }
-           }
-
-        //    &:hover {
-        //     margin-top: 1rem;
-        //    }
+        }
+        
+        
+        &:hover {
+            background: rgb(245, 245, 245);
+            border-bottom-right-radius: 2rem;
+            border-bottom-left-radius: 2rem;
+            cursor: pointer;
+        }
+        
+        &:active {
+            animation: detachTicket 0.2s normal forwards;
         }
     }
+
+    @keyframes flyAnimation {
+        0% {
+          opacity: 0;
+          transform: translateX(-2rem);
+        }
+        50% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateX(+2rem);
+        }
+    }
+
+    @keyframes detachTicket {
+        from {
+            margin: 0;
+        } to {
+            margin: 0.8rem 0;
+        }
+    }
+}
 
     .text {
         color: rgba(255, 255, 255, 0.64);

@@ -32,7 +32,7 @@
                         <strong>GRU</strong>
                         <time>17:00</time>
                     </div>
-                    <img class="airplane" src="img/airplane.svg" alt="Airplane Icon">
+                    <img class="airplane" src="./assets/airplane.svg" alt="Airplane Icon">
                     <div class="arrive">
                         <p>São Francisco, EUA</p>
                         <strong>SFO</strong>
@@ -42,14 +42,18 @@
             </section>
 
             <section class="passenger-info">
+                <div class="ball lt"></div>
+                <div class="ball lb"></div>
                 <div class="name">
                     <p>Passageiro</p>
-                    <strong>Rodrigo Terron</strong>
+                    <strong>Bruno Silva</strong>
                 </div>
                 <div class="seat">
                     <p>Assento</p>
-                    <strong>28A</strong>
+                    <strong>72B</strong>
                 </div>
+                <div class="ball rt"></div>
+                <div class="ball rb"></div>
             </section>
 
             <section class="boarding-info">
@@ -69,7 +73,7 @@
                         </dt>
                     </dl>
                     <div class="qr-code">
-                        <img src="img/qr-code.png" alt="QR-Code">
+                        <img src="./assets/qr-code.png" alt="QR-Code">
                         <p>Grupo de embarque: 3</p>
                     </div>
                 </div>
@@ -82,5 +86,13 @@
             <p class="text">Qualquer problema procure o balcão de atendendimento da sua companhia aérea</p>
         </footer>
     </div>
+
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelector(".ticket"), {
+		max: 10,
+		speed: 400
+	});
+    </script>
 </body>
 </html>
