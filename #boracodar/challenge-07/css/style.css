@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.home {
+  background: #F8F8FF;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 10rem 0;
+  gap: 4rem;
+}
+.home .texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+}
+.home .texts h1 {
+  color: #121214;
+  font-size: 4.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+.home .texts h1 span {
+  color: #6246EA;
+}
+.home .texts h2 {
+  color: #E45858;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.home .form {
+  background: White;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  gap: 2.4rem;
+  border: 0.1rem solid #EAEAEA;
+  border-radius: 1rem;
+}
+.home .form input {
+  background: #F4F4FF;
+  width: 24rem;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.home .form input:focus {
+  outline: none;
+}
+.home .form button {
+  color: White;
+  background: #6246EA;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 1.2rem 3.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.home .form button:hover {
+  filter: brightness(1.1);
+}
+.home .form button:active {
+  transform: scale(0.96);
+  transition: 0.2s;
+}
+.home .form .form-container {
+  height: 4rem;
+  background: #F4F4FF;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  gap: 1.2rem;
+  border-radius: 0.5rem;
+}
+.home .form img {
+  background: #F4F4FF;
+}
+.home .form .arrow-img {
+  cursor: pointer;
+}
+.home .bg-image-01 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.home .bg-image-02 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 10rem 0;
+}
+.content .top-container {
+  display: flex;
+  justify-content: space-between;
+}
+.content .top-container h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+.content .top-container .nav {
+  border-radius: 0.6rem;
+  border: 0.1rem solid #EAEAEA;
+  padding: 1.6rem 0.8rem;
+}
+.content .top-container .nav input {
+  display: none;
+}
+.content .top-container .nav input:checked + label {
+  color: White;
+  background: #6246EA;
+}
+.content .top-container .nav label {
+  color: #6246EA;
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 0.8rem 2.4rem;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.content .card-container {
+  width: 120rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 3rem;
+}
+.content .card-container .card {
+  width: 38rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  border: 0.1rem solid #EAEAEA;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+.content .card-container .card img {
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+.content .card-container .card .text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+.content .card-container .card .text-container .h2 {
+  color: #121214;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.content .card-container .card .text-container p {
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.content .card-container .card .text-container .city {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.content .card-container .card:hover {
+  transition: 0.2s;
+  transform: translateY(-1rem);
+}/*# sourceMappingURL=style.css.map */
