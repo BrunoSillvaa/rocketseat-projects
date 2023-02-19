@@ -1,2 +1,0 @@
-# rocketseat-projects
- 
