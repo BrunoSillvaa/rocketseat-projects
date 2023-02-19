@@ -62,6 +62,7 @@ body {
     }
     
     .form {
+        width: 100rem;
         background: White;
         display: flex;
         justify-content: space-between;
@@ -70,20 +71,90 @@ body {
         gap: 2.4rem;
         border: 0.1rem solid #EAEAEA;
         border-radius: 1rem;
-        
-        input {
+
+        .city-name {
+            height: 4rem;
             background: #F4F4FF;
-            width: 24rem;
-            border: none;
-            font-size: 1.6rem;
-            font-weight: 400;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 1rem;
+            gap: 1.2rem;
+            border-radius: .5rem;
+            flex: 1;
+
+            input {
+                width: 100%;
+                background: #F4F4FF;
+                border: none;
+                font-size: 1.6rem;
+                font-weight: 400;
+            }
+
+            input::placeholder {
+                color: #7C7C8A;
+            }
+    
+            input:focus {
+                outline: none;
+            }
+        }
+        
+        .city-select {
+            background: #F4F4FF;
+            height: 4rem;
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: .5rem;
+            padding: 1rem;
+            position: relative;
+            cursor: pointer;
+            
+            &:hover .options {
+                display: flex;
+            }
+
+            .dropdown {
+                display: flex;
+                align-items: center;
+                gap: 1.2rem;
+                
+                p {
+                    color: #7C7C8A;
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                }
+
+            }
+
+            .options {
+                display: none;
+                background: #F4F4FF;
+                color: #7C7C8A;
+                width: 100%;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+                border-radius: .5rem;
+                font-size: 1.6rem;
+                font-weight: 400;
+                list-style: none;
+                text-align: center;
+                top: 4.5rem;
+                left: 0;
+                position: absolute;
+
+                .option:hover {
+                    filter: brightness(0.5);
+                }
+
+            }
+
         }
 
-        input:focus {
-            outline: none;
-        }
-
-        button {
+        .search-btn {
             color: White;
             background: #6246EA;
             font-size: 1.4rem;
@@ -104,23 +175,9 @@ body {
             }
         }
         
-        .form-container {
-            height: 4rem;
-            background: #F4F4FF;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 1rem;
-            gap: 1.2rem;
-            border-radius: .5rem;
-        }
 
         img {
             background: #F4F4FF;
-        }
-
-        .arrow-img {
-            cursor: pointer;
         }
     }
 
@@ -230,7 +287,7 @@ body {
 
             &:hover {
                 transition: .2s;
-                transform: translateY(-1rem);
+                transform: scale(1.1);
             }
         }
     }
