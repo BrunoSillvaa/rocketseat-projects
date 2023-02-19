@@ -33,6 +33,11 @@ body::-webkit-scrollbar {
   padding: 10rem 0;
   gap: 4rem;
 }
+@media only screen and (max-width: 500px) {
+  .home {
+    gap: 2rem;
+  }
+}
 .home .texts {
   display: flex;
   flex-direction: column;
@@ -44,6 +49,11 @@ body::-webkit-scrollbar {
   font-size: 4.8rem;
   font-weight: 700;
   text-align: center;
+}
+@media only screen and (max-width: 500px) {
+  .home .texts h1 {
+    font-size: 4.5rem;
+  }
 }
 .home .texts h1 span {
   color: #6246EA;
@@ -64,6 +74,15 @@ body::-webkit-scrollbar {
   gap: 2.4rem;
   border: 0.1rem solid #EAEAEA;
   border-radius: 1rem;
+  z-index: 2;
+}
+@media only screen and (max-width: 500px) {
+  .home .form {
+    flex-direction: column;
+    width: 80vw;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
 }
 .home .form .city-name {
   height: 4rem;
@@ -75,6 +94,11 @@ body::-webkit-scrollbar {
   gap: 1.2rem;
   border-radius: 0.5rem;
   flex: 1;
+}
+@media only screen and (max-width: 500px) {
+  .home .form .city-name {
+    width: 100%;
+  }
 }
 .home .form .city-name input {
   width: 100%;
@@ -89,7 +113,7 @@ body::-webkit-scrollbar {
 .home .form .city-name input:focus {
   outline: none;
 }
-.home .form .city-select {
+.home .form .city-search {
   background: #F4F4FF;
   height: 4rem;
   display: flex;
@@ -101,37 +125,48 @@ body::-webkit-scrollbar {
   position: relative;
   cursor: pointer;
 }
-.home .form .city-select:hover .options {
+@media only screen and (max-width: 500px) {
+  .home .form .city-search {
+    width: 100%;
+  }
+}
+.home .form .city-search:hover .options {
   display: flex;
 }
-.home .form .city-select .dropdown {
+.home .form .city-search .dropdown {
   display: flex;
   align-items: center;
   gap: 1.2rem;
 }
-.home .form .city-select .dropdown p {
+.home .form .city-search .dropdown p {
   color: #7C7C8A;
   font-size: 1.6rem;
   font-weight: 400;
 }
-.home .form .city-select .options {
+.home .form .city-search .options {
   display: none;
-  background: #F4F4FF;
+  background: White;
   color: #7C7C8A;
   width: 100%;
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
+  border: 1px solid #F4F4FF;
   border-radius: 0.5rem;
   font-size: 1.6rem;
   font-weight: 400;
   list-style: none;
   text-align: center;
-  top: 4.5rem;
-  left: 0;
+  top: 0;
+  right: 0;
   position: absolute;
 }
-.home .form .city-select .options .option:hover {
+.home .form .city-search .options h2 {
+  font-size: 1.1em;
+  font-weight: 500;
+  cursor: default;
+}
+.home .form .city-search .options .option:hover {
   filter: brightness(0.5);
 }
 .home .form .search-btn {
@@ -161,11 +196,21 @@ body::-webkit-scrollbar {
   left: 0;
   z-index: 1;
 }
+@media only screen and (max-width: 500px) {
+  .home .bg-image-01 {
+    width: 100%;
+  }
+}
 .home .bg-image-02 {
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 1;
+}
+@media only screen and (max-width: 500px) {
+  .home .bg-image-02 {
+    width: 100%;
+  }
 }
 
 .content {
@@ -174,9 +219,21 @@ body::-webkit-scrollbar {
   gap: 4rem;
   padding: 10rem 0;
 }
+@media only screen and (max-width: 500px) {
+  .content {
+    padding: 5rem 0;
+  }
+}
 .content .top-container {
   display: flex;
   justify-content: space-between;
+}
+@media only screen and (max-width: 500px) {
+  .content .top-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 .content .top-container h1 {
   font-size: 3.2rem;
@@ -212,6 +269,13 @@ body::-webkit-scrollbar {
   justify-items: center;
   gap: 3rem;
 }
+@media only screen and (max-width: 500px) {
+  .content .card-container {
+    grid-template-columns: 1fr;
+    width: 100vw;
+    gap: 2rem;
+  }
+}
 .content .card-container .card {
   width: 38rem;
   display: flex;
@@ -220,6 +284,11 @@ body::-webkit-scrollbar {
   border: 0.1rem solid #EAEAEA;
   border-radius: 1rem;
   cursor: pointer;
+}
+@media only screen and (max-width: 500px) {
+  .content .card-container .card {
+    width: 85%;
+  }
 }
 .content .card-container .card img {
   border-top-right-radius: 1rem;
