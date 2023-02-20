@@ -22,7 +22,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.home {
+.header {
   background: #F8F8FF;
   width: 100%;
   display: flex;
@@ -34,37 +34,52 @@ body::-webkit-scrollbar {
   gap: 4rem;
 }
 @media only screen and (max-width: 500px) {
-  .home {
+  .header {
     gap: 2rem;
   }
 }
-.home .texts {
+.header .texts {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.8rem;
+  opacity: 0;
 }
-.home .texts h1 {
+.header .texts.active {
+  animation: animationY 1s ease;
+  opacity: 1;
+}
+@keyframes animationY {
+  from {
+    opacity: 0;
+    transform: translateY(30rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.header .texts h1 {
   color: #121214;
   font-size: 4.8rem;
   font-weight: 700;
   text-align: center;
 }
 @media only screen and (max-width: 500px) {
-  .home .texts h1 {
+  .header .texts h1 {
     font-size: 4.5rem;
   }
 }
-.home .texts h1 span {
+.header .texts h1 span {
   color: #6246EA;
 }
-.home .texts h2 {
+.header .texts h2 {
   color: #E45858;
   font-size: 1.6rem;
   font-weight: 500;
   text-transform: uppercase;
 }
-.home .form {
+.header .form {
   width: 100rem;
   background: White;
   display: flex;
@@ -75,16 +90,31 @@ body::-webkit-scrollbar {
   border: 0.1rem solid #EAEAEA;
   border-radius: 1rem;
   z-index: 2;
+  opacity: 0;
 }
 @media only screen and (max-width: 500px) {
-  .home .form {
+  .header .form {
     flex-direction: column;
     width: 80vw;
     padding: 1rem;
     gap: 1.5rem;
   }
 }
-.home .form .city-name {
+.header .form.active {
+  opacity: 1;
+  animation: animationY 1s ease;
+}
+@keyframes animationY {
+  from {
+    opacity: 0;
+    transform: translateY(20rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.header .form .city-name {
   height: 4rem;
   background: #F4F4FF;
   display: flex;
@@ -96,24 +126,24 @@ body::-webkit-scrollbar {
   flex: 1;
 }
 @media only screen and (max-width: 500px) {
-  .home .form .city-name {
+  .header .form .city-name {
     width: 100%;
   }
 }
-.home .form .city-name input {
+.header .form .city-name input {
   width: 100%;
   background: #F4F4FF;
   border: none;
   font-size: 1.6rem;
   font-weight: 400;
 }
-.home .form .city-name input::placeholder {
+.header .form .city-name input::placeholder {
   color: #7C7C8A;
 }
-.home .form .city-name input:focus {
+.header .form .city-name input:focus {
   outline: none;
 }
-.home .form .city-search {
+.header .form .city-search {
   background: #F4F4FF;
   height: 4rem;
   display: flex;
@@ -126,24 +156,21 @@ body::-webkit-scrollbar {
   cursor: pointer;
 }
 @media only screen and (max-width: 500px) {
-  .home .form .city-search {
+  .header .form .city-search {
     width: 100%;
   }
 }
-.home .form .city-search:hover .options {
-  display: flex;
-}
-.home .form .city-search .dropdown {
+.header .form .city-search .dropdown {
   display: flex;
   align-items: center;
   gap: 1.2rem;
 }
-.home .form .city-search .dropdown p {
+.header .form .city-search .dropdown p {
   color: #7C7C8A;
   font-size: 1.6rem;
   font-weight: 400;
 }
-.home .form .city-search .options {
+.header .form .city-search .options {
   display: none;
   background: White;
   color: #7C7C8A;
@@ -157,19 +184,33 @@ body::-webkit-scrollbar {
   font-weight: 400;
   list-style: none;
   text-align: center;
-  top: 0;
+  top: 5rem;
   right: 0;
   position: absolute;
 }
-.home .form .city-search .options h2 {
+.header .form .city-search .options.active {
+  display: flex;
+  animation: animationOpts 0.2s ease;
+}
+@keyframes animationOpts {
+  from {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.header .form .city-search .options h2 {
   font-size: 1.1em;
   font-weight: 500;
   cursor: default;
 }
-.home .form .city-search .options .option:hover {
+.header .form .city-search .options .option:hover {
   filter: brightness(0.5);
 }
-.home .form .search-btn {
+.header .form .search-btn {
   color: White;
   background: #6246EA;
   font-size: 1.4rem;
@@ -180,35 +221,47 @@ body::-webkit-scrollbar {
   border-radius: 0.5rem;
   cursor: pointer;
 }
-.home .form .search-btn:hover {
+.header .form .search-btn:hover {
   filter: brightness(1.1);
 }
-.home .form .search-btn:active {
+.header .form .search-btn:active {
   transform: scale(0.96);
   transition: 0.2s;
 }
-.home .form img {
+.header .form img {
   background: #F4F4FF;
 }
-.home .bg-image-01 {
+.header .image-01 {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -50rem;
   z-index: 1;
+  opacity: 0;
+  transition: transform 1s ease;
+}
+.header .image-01.active {
+  opacity: 1;
+  transform: translateX(50rem);
 }
 @media only screen and (max-width: 500px) {
-  .home .bg-image-01 {
+  .header .image-01 {
     width: 100%;
   }
 }
-.home .bg-image-02 {
+.header .image-02 {
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: -50rem;
   z-index: 1;
+  opacity: 0;
+  transition: transform 1s ease;
+}
+.header .image-02.active {
+  opacity: 1;
+  transform: translateX(-50rem);
 }
 @media only screen and (max-width: 500px) {
-  .home .bg-image-02 {
+  .header .image-02 {
     width: 100%;
   }
 }
@@ -218,6 +271,21 @@ body::-webkit-scrollbar {
   flex-direction: column;
   gap: 4rem;
   padding: 10rem 0;
+  opacity: 0;
+}
+.content.active {
+  opacity: 1;
+  animation: animationX 1s ease;
+}
+@keyframes animationX {
+  from {
+    opacity: 0;
+    transform: translateX(30rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 @media only screen and (max-width: 500px) {
   .content {
@@ -300,10 +368,10 @@ body::-webkit-scrollbar {
   gap: 1.6rem;
   padding: 1.6rem;
 }
-.content .card-container .card .text-container .h2 {
+.content .card-container .card .text-container h2 {
   color: #121214;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 .content .card-container .card .text-container p {
   color: rgba(0, 0, 0, 0.75);
@@ -318,4 +386,5 @@ body::-webkit-scrollbar {
 .content .card-container .card:hover {
   transition: 0.2s;
   transform: scale(1.1);
+  border: 0.1rem solid #6246EA;
 }/*# sourceMappingURL=style.css.map */

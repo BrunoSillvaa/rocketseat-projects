@@ -6,6 +6,30 @@
             @content
         }
     }
+};
+@mixin animationX($axisX) {
+    @keyframes animationX {
+        from {
+            opacity: 0;
+            transform: translateX($axisX);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+@mixin animationY($axisY) {
+    @keyframes animationY {
+        from {
+            opacity: 0;
+            transform: translateY($axisY);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 }
 
 * {
@@ -32,7 +56,7 @@ body {
     }
 }
 
-.home {
+.header {
     background: #F8F8FF;
     width: 100%;
     display: flex;
@@ -52,6 +76,14 @@ body {
         flex-direction: column;
         align-items: center;
         gap: 1.8rem;
+        opacity: 0;
+
+        &.active {
+            animation: animationY 1s ease;
+            opacity: 1;
+
+            @include animationY(30rem)
+        }
 
         h1 {
             color: #121214;
@@ -88,12 +120,20 @@ body {
         border: 0.1rem solid #EAEAEA;
         border-radius: 1rem;
         z-index: 2;
+        opacity: 0;
 
         @include responsive(mobile) {
             flex-direction: column;
             width: 80vw;
             padding: 1rem;
             gap: 1.5rem;
+        }
+
+        &.active {
+            opacity: 1;
+            animation: animationY 1s ease;
+    
+            @include animationY(20rem)
         }
 
         .city-name {
@@ -144,10 +184,6 @@ body {
                 width: 100%;
             }
             
-            &:hover .options {
-                display: flex;
-            }
-
             .dropdown {
                 display: flex;
                 align-items: center;
@@ -158,9 +194,9 @@ body {
                     font-size: 1.6rem;
                     font-weight: 400;
                 }
-
+                
             }
-
+            
             .options {
                 display: none;
                 background: White;
@@ -175,24 +211,40 @@ body {
                 font-weight: 400;
                 list-style: none;
                 text-align: center;
-                top: 0;
+                top: 5rem;
                 right: 0;
                 position: absolute;
+                
+                &.active {
+                    display: flex;
+                    animation: animationOpts .2s ease;
+
+                    @keyframes animationOpts {
+                        from {
+                            opacity: 0;
+                            transform: translateY(-5rem);
+                        }
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+                }
 
                 h2 {
                     font-size: 1.1em;
                     font-weight: 500;
                     cursor: default;
                 }
-
+                
                 .option:hover {
                     filter: brightness(0.5);
                 }
-
+                
             }
 
         }
-
+        
         .search-btn {
             color: White;
             background: #6246EA;
@@ -213,29 +265,42 @@ body {
                 transition: .2s;
             }
         }
-        
 
         img {
             background: #F4F4FF;
         }
     }
 
-    .bg-image-01 {
+    .image-01 {
         position: absolute;
         top: 0;
-        left: 0;
+        left: -50rem;
         z-index: 1;
+        opacity: 0;
+        transition: transform 1s ease;
+
+        &.active {
+            opacity: 1;
+            transform: translateX(50rem);
+        }
 
         @include responsive(mobile) {
             width: 100%;
         }
     }
 
-    .bg-image-02 {
+    .image-02 {
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: -50rem;
         z-index: 1;
+        opacity: 0;
+        transition: transform 1s ease;
+
+        &.active {
+            opacity: 1;
+            transform: translateX(-50rem);
+        }
 
         @include responsive(mobile) {
             width: 100%;
@@ -248,6 +313,14 @@ body {
     flex-direction: column;
     gap: 4rem;
     padding: 10rem 0;
+    opacity: 0;
+    
+    &.active {
+        opacity: 1;
+        animation: animationX 1s ease;
+
+        @include animationX(30rem)
+    }
 
     @include responsive(mobile) {
         padding: 5rem 0;
@@ -333,10 +406,10 @@ body {
                 gap: 1.6rem;
                 padding: 1.6rem;
 
-                .h2 {
+                h2 {
                     color: #121214;
                     font-size: 2rem;
-                    font-weight: 500;
+                    font-weight: 700;
                 }
 
                 p {
@@ -355,6 +428,7 @@ body {
             &:hover {
                 transition: .2s;
                 transform: scale(1.1);
+                border: .1rem solid #6246EA;
             }
         }
     }
