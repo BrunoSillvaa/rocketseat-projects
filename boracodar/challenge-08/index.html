@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Dash Board</title>
+</head>
+<body>
+    <div class="container">
+        <div class="general-nps">
+            <h1>NPS Geral</h1>
+            <div class="rating">
+                <img src="assets/smile-icon.svg" alt="Smile Icon">
+                <p>Excelente</p>
+            </div>
+            <p>NPS Score 75</p>
+        </div>
+
+        <div class="closed-sales">
+            <h1>Vendas Fechadas</h1>
+            <div class="goal-reached">
+                <img src="assets/ellipse-blue.svg">
+                <div class="reach">
+                    <strong data-goal="70">70%</strong>
+                    <p>alcançada</p>
+                </div>
+            </div>
+            <div class="expected-goal">
+                <p>Esperado: 100</p>
+                <p>Alcançado: 90</p>
+            </div>
+        </div>
+
+        <div class="monthly-goal">
+            <h1>Meta Mensal</h1>
+            <div class="goal-reached">
+                <img src="assets/ellipse-pink.svg">
+                <div class="reach">
+                    <strong data-goal="90">90%</strong>
+                    <p>alcançada</p>
+                </div>
+            </div>
+            <div class="expected-goal">
+                <p>Esperado: R$ 70K</p>
+                <p>Alcançado: R$ 63K</p>
+            </div>
+        </div>
+
+        <div class="daily-sales">
+            <div class="texts">
+                <h1>Vendas por dia da semana</h1>
+                <div class="sales">
+                    <div class="most-sales">
+                        <p>Dia com mais vendas</p>
+                        <strong>quarta-feira</strong>
+                    </div>
+                    <div class="less-sales">
+                        <p>Dia com menos vendas</p>
+                        <strong>domingo</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="graphic">
+                <div class="day">
+                    <span style="height: 3.9rem"></span>
+                    <p>dom</p>
+                </div>
+                <div class="day">
+                    <span style="height: 11.5rem"></span>
+                    <p>seg</p>
+                </div>
+                <div class="day">
+                    <span style="height: 7.6rem"></span>
+                    <p>tec</p>
+                </div>
+                <div class="day">
+                    <span style="height: 15.9rem"></span>
+                    <p>qua</p>
+                </div>
+                <div class="day">
+                    <span style="height: 12.9rem"></span>
+                    <p>qui</p>
+                </div>
+                <div class="day">
+                    <span style="height: 12rem"></span>
+                    <p>sex</p>
+                </div>
+                <div class="day">
+                    <span style="height: 6.9rem"></span>
+                    <p>sab</p>
+                </div>
+                <span class="line"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const numbers = document.querySelectorAll('[data-goal]')
+
+        // document.addEventListener('load', addNums)
+
+        addNums()
+
+        function addNums() {
+            numbers.forEach(num => {
+                let cont = 0
+                let interval = setInterval(() => {
+                    cont ++
+                    num.textContent = `${cont}%`
+
+                    if (cont == num.dataset.goal) {clearInterval(interval)}
+
+                }, 50)
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background: #292738;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 500px) {
+  body {
+    height: auto;
+  }
+}
+
+.container {
+  width: 112rem;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(2, auto);
+  row-gap: 3.5rem;
+  column-gap: 3.5rem;
+  justify-items: center;
+}
+@media only screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    padding: 1rem;
+    row-gap: 2rem;
+  }
+}
+.container > div {
+  color: #ffffff;
+  background: #363447;
+  padding: 2.9rem 4.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1.6rem;
+  box-shadow: 3px 4px 26px rgba(0, 0, 0, 0.25);
+}
+@media only screen and (max-width: 500px) {
+  .container > div {
+    padding: 1.4rem 2.4rem;
+  }
+}
+.container > div h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+.container .general-nps {
+  grid-row: 1;
+}
+@media only screen and (max-width: 500px) {
+  .container .general-nps {
+    width: 100%;
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+.container .general-nps .rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+}
+.container .general-nps .rating img {
+  width: 5.4rem;
+}
+.container .general-nps .rating p {
+  color: #81fbb8;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+.container .general-nps p {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.container .closed-sales {
+  width: 41rem;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3.2rem;
+}
+@media only screen and (max-width: 500px) {
+  .container .closed-sales {
+    width: 100%;
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+.container .closed-sales .goal-reached {
+  position: relative;
+}
+.container .closed-sales .goal-reached img {
+  background: url("../assets/ellipse.svg") no-repeat;
+  width: 20.7rem;
+  height: 19.7rem;
+}
+.container .closed-sales .goal-reached .reach {
+  position: absolute;
+  top: 7rem;
+  left: 6.5rem;
+  text-align: center;
+}
+.container .closed-sales .goal-reached .reach strong {
+  font-size: 3.4rem;
+  font-weight: 700;
+}
+.container .closed-sales .goal-reached .reach p {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.container .closed-sales .expected-goal {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .closed-sales .expected-goal p {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.container .closed-sales .expected-goal p:nth-of-type(1):before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #4A4556;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  vertical-align: bottom;
+}
+.container .closed-sales .expected-goal p:nth-of-type(2):before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(121.94deg, #DF9780 15.98%, #A66DE9 82.85%);
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  vertical-align: bottom;
+}
+.container .monthly-goal {
+  width: 41rem;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3.2rem;
+}
+@media only screen and (max-width: 500px) {
+  .container .monthly-goal {
+    width: 100%;
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+.container .monthly-goal .goal-reached {
+  position: relative;
+}
+.container .monthly-goal .goal-reached img {
+  background: url("../assets/ellipse.svg");
+  width: 19.7rem;
+}
+.container .monthly-goal .goal-reached .reach {
+  position: absolute;
+  top: 7rem;
+  left: 6.5rem;
+  text-align: center;
+}
+.container .monthly-goal .goal-reached .reach strong {
+  font-size: 3.4rem;
+  font-weight: 700;
+}
+.container .monthly-goal .goal-reached .reach p {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.container .monthly-goal .expected-goal {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .monthly-goal .expected-goal p {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.container .monthly-goal .expected-goal p:nth-of-type(1):before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #4A4556;
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  vertical-align: bottom;
+}
+.container .monthly-goal .expected-goal p:nth-of-type(2):before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(121.94deg, #DF9780 15.98%, #A66DE9 82.85%);
+  border-radius: 50%;
+  margin-right: 0.4rem;
+  vertical-align: bottom;
+}
+.container .daily-sales {
+  width: 100%;
+  grid-row: 2;
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media only screen and (max-width: 500px) {
+  .container .daily-sales {
+    grid-column: 1;
+    grid-row: 4;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    row-gap: 5rem;
+  }
+}
+.container .daily-sales .texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 3.2rem;
+}
+@media only screen and (max-width: 500px) {
+  .container .daily-sales .texts {
+    grid-column: 1;
+    grid-row: 1;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+.container .daily-sales .texts h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+.container .daily-sales .texts .sales {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+@media only screen and (max-width: 500px) {
+  .container .daily-sales .texts .sales {
+    flex-direction: row;
+    gap: 2rem;
+    text-align: center;
+  }
+}
+.container .daily-sales .texts .sales .most-sales p {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+@media only screen and (max-width: 500px) {
+  .container .daily-sales .texts .sales .most-sales p {
+    font-size: 1.2rem;
+  }
+}
+.container .daily-sales .texts .sales .most-sales p::before {
+  content: "";
+  display: inline-block;
+  width: 0rem;
+  height: 0rem;
+  margin-right: 0.4rem;
+  border-left: 0.6rem solid transparent;
+  border-right: 0.6rem solid transparent;
+  border-bottom: 1rem solid #28C76F;
+}
+.container .daily-sales .texts .sales .most-sales strong {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+.container .daily-sales .texts .sales .less-sales p {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+@media only screen and (max-width: 500px) {
+  .container .daily-sales .texts .sales .less-sales p {
+    font-size: 1.2rem;
+  }
+}
+.container .daily-sales .texts .sales .less-sales p::before {
+  content: "";
+  display: inline-block;
+  width: 0rem;
+  height: 0rem;
+  margin-right: 0.4rem;
+  border-left: 0.6rem solid transparent;
+  border-right: 0.6rem solid transparent;
+  border-top: 1rem solid #FEB692;
+}
+.container .daily-sales .texts .sales .less-sales strong {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+.container .daily-sales .graphic {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 6rem;
+  position: relative;
+}
+@media only screen and (max-width: 500px) {
+  .container .daily-sales .graphic {
+    width: 100%;
+    grid-column: 1;
+    grid-row: 2;
+    gap: 0.8rem;
+  }
+}
+.container .daily-sales .graphic .day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .daily-sales .graphic .day span {
+  width: 1.5rem;
+  background: linear-gradient(180deg, #90F7EC 0%, #32CCBC 100%);
+  border-radius: 3rem;
+  z-index: 1;
+}
+.container .daily-sales .graphic .day p {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+.container .daily-sales .graphic .line {
+  width: 100%;
+  height: 0.3rem;
+  background: rgba(74, 69, 86, 0.7882352941);
+  border-radius: 3rem;
+  position: absolute;
+  top: 50%;
+}/*# sourceMappingURL=style.css.map */
